@@ -1,0 +1,25 @@
+.MoviesShowpage {
+  height: auto;
+  padding: 30px 0;
+}
+
+.MoviesShowpage .youtubeVedio {
+  min-width: 100%;
+  min-height: 80vh;
+}
+
+.BackButton {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--mainColor);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.BackButton i {
+  color: var(--mainColor);
+}

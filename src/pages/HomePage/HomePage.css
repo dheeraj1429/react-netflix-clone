@@ -1,0 +1,9 @@
+.HomePage {
+  width: 100%;
+  height: auto;
+}
+
+.ContainerDiv {
+  max-width: 1600px;
+  margin: auto;
+}

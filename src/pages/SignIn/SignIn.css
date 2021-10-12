@@ -1,0 +1,28 @@
+.SignInComponent {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1)), url(https://wallpaperaccess.com/full/37949.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SignInDiv input {
+  width: 100%;
+  height: 60px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid var(--lightSmook);
+  outline: none;
+  color: var(--lightSmook);
+}
+
+.submiteButton {
+  border: none;
+  padding: 0.6rem 2rem;
+  margin: 1rem 0;
+  background-color: var(--red);
+  color: var(--mainColor);
+  cursor: pointer;
+}
