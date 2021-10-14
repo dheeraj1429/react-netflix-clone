@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import { signInWithGoogle } from "../../Component/Firebase.component/Firebase.utility";
+
 import "./SignIn.css";
 
 function SigIn() {
@@ -42,12 +44,6 @@ function SigIn() {
     setUserData({ ...UserData, [name]: value });
   };
 
-  useEffect(() => {
-    const resData = fetch(`https://react-movi-default-rtdb.firebaseio.com/data.json`)
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  }, []);
-
   return (
     <div className="SignInComponent">
       <div className="SignInDiv">
@@ -68,6 +64,10 @@ function SigIn() {
 
           <button type="submit" className="submiteButton" onClick={setData}>
             submit
+          </button>
+
+          <button type="submit" className="submiteButton" onClick={signInWithGoogle}>
+            Sign in With Google
           </button>
         </form>
       </div>

@@ -37,19 +37,12 @@ p {
   color: var(--mainColor);
   border-radius: 2px;
   cursor: pointer;
+  margin-right: 1rem;
 }
 
 .WishListData {
   position: relative;
   margin-left: 1rem;
-}
-
-.WishListData::after {
-  content: "1";
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: var(--mainColor);
 }
 
 .firstDivNav h1 {

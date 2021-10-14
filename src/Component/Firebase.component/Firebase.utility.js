@@ -1,11 +1,8 @@
-import firebase from "firebase/app";
-import "firebase/firestore";
-import "firebase/auth";
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
+import "firebase/compat/auth";
 
-import { initializeApp } from "firebase/app";
-import { Provider } from "react-redux";
-
-const firebaseConfig = {
+const App = {
   apiKey: "AIzaSyBZTIAyZaFOSraO6jU-OfntMyfyPYNAjgs",
   authDomain: "react-movi.firebaseapp.com",
   databaseURL: "https://react-movi-default-rtdb.firebaseio.com",
@@ -15,9 +12,35 @@ const firebaseConfig = {
   appId: "1:378256560820:web:1d801d0564e37c59ebbde1",
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const createUserProfleDocument = async (userAuth, extraData) => {
+  if (!userAuth) return;
 
-export const firestore = firebase.firestore();
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const snapShot = await userRef.get();
+
+  if (!snapShot.exists) {
+    const { displayName, email } = userAuth;
+    const EnteryDate = new Date();
+
+    try {
+      await userRef.set({
+        displayName,
+        email,
+        ...extraData,
+        EnteryDate,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  return userRef;
+};
+
+firebase.initializeApp(App);
+
 export const auth = firebase.auth();
-export const provider = new firebase.auth.GoogleAuthProvider();
+export const firestore = firebase.firestore();
+
+const provider = new firebase.auth.GoogleAuthProvider();
+provider.setCustomParameters({ prompt: "select_account" });
+export const signInWithGoogle = () => auth.signInWithPopup(provider);

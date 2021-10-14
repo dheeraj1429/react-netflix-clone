@@ -2,8 +2,6 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { setData } from "../../Redux/Action/action";
 import { useSelector, useDispatch } from "react-redux";
-import YouTube from "react-youtube";
-import movieTrailer from "movie-trailer";
 
 import "./BannerComponent.css";
 
@@ -30,8 +28,6 @@ function BannerComponent() {
   if (selector) {
     FilterBannerData = selector.results.filter((el, idx) => idx < 1);
   }
-
-  console.log(FilterBannerData);
 
   useEffect(() => {
     res();
