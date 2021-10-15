@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import { auth } from "../Firebase.component/Firebase.utility";
@@ -6,10 +6,11 @@ import { auth } from "../Firebase.component/Firebase.utility";
 import "./Navbar.css";
 
 function Navbar(props) {
+  const [ShowNavbar, setShowNavbar] = useState(false);
   let shortName;
   if (props.userData !== null) {
     const { displayName } = props.userData;
-    shortName = displayName.split(" ");
+    shortName = displayName.split(",");
   }
 
   return (
@@ -21,10 +22,13 @@ function Navbar(props) {
               <img src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" style={{ width: "100px" }} />
             </Link>
           </div>
+          <div className="searchDiv">
+            <i class="fas fa-search" onClick={() => setShowNavbar(true)}></i>
+            {ShowNavbar == true ? <input type="search" placeholder="Search Movies" className="search"></input> : null}
+          </div>
 
           {!props.userData ? (
             <div className="secondDivNav">
-              <i class="fas fa-search"></i>
               <p>LOGIN</p>
               <Link to="/SiginIn">
                 <button type="button" className="Signinbutton">

@@ -6,7 +6,7 @@ import SigIn from "./pages/SignIn/SigIn";
 
 import { Route, Switch } from "react-router";
 
-import { auth, createUserProfleDocument } from "./Component/Firebase.component/Firebase.utility";
+import { auth, createUserProfileDocument } from "./Component/Firebase.component/Firebase.utility";
 
 import "./App.css";
 
@@ -17,22 +17,9 @@ function App() {
   });
 
   useEffect(() => {
-    const dataUserColletion = auth.onAuthStateChanged(async (userAuth) => {
+    auth.onAuthStateChanged(async (userAuth) => {
+      createUserProfileDocument(userAuth);
       setUser({ currentUser: userAuth });
-
-      // if (userAuth) {
-      //   const userRef = await createUserProfleDocument(userAuth);
-      //   userRef.onSnapshot((snap) => {
-      //     console.log(snap);
-      //     setUser({
-      //       currentUser: {
-      //         id: snap.id,
-      //         name: snap.data().displayName,
-      //         email: snap.data().email,
-      //       },
-      //     });
-      //   });
-      // }
     });
   }, []);
 

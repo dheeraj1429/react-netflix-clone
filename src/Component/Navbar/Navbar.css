@@ -48,3 +48,17 @@ p {
 .firstDivNav h1 {
   color: var(--mainColor);
 }
+
+i {
+  cursor: pointer;
+}
+
+.search {
+  width: 500px;
+  height: 40px;
+  padding: 1rem;
+  border-radius: 30px;
+  margin-left: 1rem;
+  outline: none;
+  border: none;
+}

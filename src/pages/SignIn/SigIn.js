@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { signInWithGoogle } from "../../Component/Firebase.component/Firebase.utility";
+import { auth, createUserProfileDocument } from "../../Component/Firebase.component/Firebase.utility";
 
 import "./SignIn.css";
 
