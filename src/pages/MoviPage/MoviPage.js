@@ -6,6 +6,7 @@ import "./MoviPage.css";
 import { Link } from "react-router-dom";
 
 function MoviPage(props) {
+  console.log(props);
   const [Title, setTitle] = useState("");
   const title = props.location.data.original_title;
 

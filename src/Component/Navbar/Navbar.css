@@ -62,3 +62,52 @@ i {
   outline: none;
   border: none;
 }
+
+.hideSearch {
+  display: none;
+}
+
+.searchDiv {
+  position: relative;
+}
+.SearchDivContaienr {
+  width: 550px;
+  height: 400px;
+  position: absolute;
+  z-index: 999;
+  top: 50px;
+  background-color: var(--mainColor);
+  border-radius: 10px;
+  overflow: scroll;
+  padding: 1rem;
+  overflow-x: hidden;
+}
+.MoviesCard {
+  background-color: var(--dark);
+  margin: auto;
+  height: 20%;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+a {
+  text-decoration: none;
+}
+
+.MoviShortImg {
+  width: 30%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.MoviContent {
+  margin-left: 1rem;
+  color: var(--mainColor);
+}
+
+.AboutMovi {
+  font-size: 0.7rem;
+}

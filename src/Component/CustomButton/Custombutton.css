@@ -1,0 +1,9 @@
+.playMoveButton {
+  padding: 1rem 3rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--red);
+  color: var(--mainColor);
+  margin: 1rem;
+}
